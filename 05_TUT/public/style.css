@@ -1,0 +1,85 @@
+*,
+*::after,
+*::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body{
+  width: 100%;
+  min-height: 100vh;
+}
+body{
+  background: #333;
+}
+h1{
+  font-size: 2.5rem;
+}
+h3{
+  font-size: 2rem;
+}
+header{
+  background: #555;
+  color: #fff;
+  height: 60px;
+  max-height: 10vw;
+  padding: 0 1rem;
+}
+section{
+  display: grid;
+  place-items: center;
+  min-height: 90vh;
+  color: #fff;
+}
+nav{
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ul{
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+.img-sec{
+  place-items: start;
+}
+.img-sec .container{
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+
+  padding: 1rem;
+}
+.img-sec figure{
+  max-height: 300px;
+  overflow: hidden;
+}
+.img-sec figure img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.posts{
+  color: #fff;
+  padding: 2rem;
+  padding-bottom: 0;
+  gap: 2rem;
+}
+.posts li:not(:last-child){
+  border-right: 1px solid #ddd;
+}

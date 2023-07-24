@@ -1,0 +1,2 @@
+1690025015498		bc76dbe2-9ce0-4577-953d-65754e558480		Log event emitted!
+1690025046417		db393c09-c6c0-44bc-830f-0290d7e04e76		Another log event emitted!
