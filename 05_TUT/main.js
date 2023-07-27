@@ -1,27 +1,3 @@
-// MIDDLEWARES
-
-  //* Middleware functions in Express.js are functions that have access to the request (req) and response (res) objects,-
-  //  and they can perform various tasks on the request or response, modify them,-
-  //  or pass control to the "next" middleware (third argument) in the chain.
-
-  //* There are three type middlewares ;
-    //  1- built-in
-    //  2- custom
-    //  3- third-party
-
-  //* We use "app.use(/* middleware */)" method while using middleware
-  //* Middlewares are applied all over the app, when we set it.
-  //* If we write our custom middleware, we have to put it on top of all the routes. So, the order is important!
-  //* app.use( express.urlencoded(/*{options*/}) ) is a middleware function used to handle URL-encoded data in HTTP POST-
-  //  requests. It is part of the body-parser middleware package, which allows Express to parse incoming request bodies.
-  //  When a client sends data using the application/x-www-form-urlencoded content type (commonly used in HTML forms), the-
-  //  server needs to extract and parse that data to access it easily in the route handlers.
-  //* app.use( express.json() ) handles files coming in type of json. Its content-type is 'application/json'
-  //* app.use( express.static(/*path*/) ) allows us to define our static file. (e.g express.static(./public) )
-  //* Thanks to express.static, we can separate out html files to another folders. They will run as they are in public-
-  //  directory whatever they have links. (e.g The img tag in another file, but it'll work --> <img src="./imgs/img_01.jpg")
-
-// NOTE : If we don't use express.static middleware, we will have to create another GET request method for our images,css,etc.
 /*
 const express = require('express');
 const app = express();
