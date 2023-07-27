@@ -2,8 +2,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const DATA = require('./users');
 
-require('dotenv').config({path: __dirname + '/../../.env'})
-
 const auth = function(req, res){
   const {username, email, password} = req.body;
   if ( !(username || email) || !password ) {
