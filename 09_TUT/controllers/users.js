@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const userModal = require('../models/userModal.json')
+const userModal = require('../models/userModel.json')
 
 // IMPORTANT : Do not use "this". I don't know what does "this" actually do!
 const DATA = {
@@ -12,6 +12,7 @@ const DATA = {
       JSON.stringify(DATA.users)
     )
   },
+  getUsers : function(req, res, next){ res.json(DATA.users) },
   getOne : function(req, res){ 
     if (!req.email) throw new Error('Email is required');
 
@@ -19,6 +20,7 @@ const DATA = {
     return res.status(200).json(usr)
   },
   setOne : function(req, res, next){
+    return res.sendStatus(200)
     if (!obj?.email) {
       const errMsg = 'setOne function accepts an Object literal as a parameter including email.'
       throw new Error(errMsg)
@@ -27,11 +29,11 @@ const DATA = {
     DATA.setUsers([...DATA.user, {...usr, ...obj}])
     next()
   },
-  deleteOne : function(req, res, next) {
+  deleteOne : function(req, res) {
+    return res.sendStatus(200)
     DATA.setUsers(
-      DATA.users.filter(user => user.email !== email)
+      DATA.users.filter(user => user.email !== req.params.email)
     )
-    next()
   },
   addOne : function(obj){
     const cond = Object.keys(userModal)
@@ -39,7 +41,7 @@ const DATA = {
 
     if (!cond) throw new Error('Parameter must include all the properties.');
     
-    DATA.setUsers([...DATA.users, {...obj}])
+    DATA.setUsers([...DATA.users, obj])
   }
 }
 

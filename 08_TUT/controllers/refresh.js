@@ -1,5 +1,3 @@
-require('dotenv').config({path: __dirname + '/../../.env'})
-
 const DATA = require('./users.js');
 const jwt = require('jsonwebtoken');
 
