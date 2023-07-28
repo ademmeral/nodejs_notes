@@ -1,18 +1,18 @@
 const path = require('path');
 const fs = require('fs');
-const userModal = require('../models/userModel.json')
+const USER_MODEL = require('../models/user.json');
 
 // IMPORTANT : Do not use "this". I don't know what does "this" actually do!
 const DATA = {
   users : require('../models/users.json'),
-  setUsers : function(data) {
+  setMany : function(data) {
     DATA.users = data;
     fs.writeFileSync(
       path.join(__dirname, '..', 'models', 'users.json'),
       JSON.stringify(DATA.users)
     )
   },
-  getUsers : function(req, res, next){ res.json(DATA.users) },
+  getMany : function(req, res, next){ res.json(DATA.users) },
   getOne : function(req, res){ 
     if (!req.email) throw new Error('Email is required');
 
@@ -36,7 +36,7 @@ const DATA = {
     )
   },
   addOne : function(obj){
-    const cond = Object.keys(userModal)
+    const cond = Object.keys(USER_MODEL)
       .every(key => obj.hasOwnProperty(key));
 
     if (!cond) throw new Error('Parameter must include all the properties.');
