@@ -404,40 +404,40 @@ console.log(token);
   * It is used to remember information about the user or their browsing behavior. 
   * Cookies are commonly used to enhance user experiences, remember login information, track user preferences,and perform other tasks that improve website functionality.
 
-  #### Common Cookie Attributes
+#### Common Cookie Attributes
 
-    1. httpOnly: (boolean)
+1. **httpOnly : (boolean)**
 
-      + The httpOnly attribute is a flag that can be set on a cookie. 
-      + When this flag is present, it means that the cookie is not accessible to JavaScript running in the browser. 
-      + It's a security measure to prevent certain types of cross-site scripting (XSS) attacks.
-      + XSS attacks attempt to steal information from cookies by injecting malicious scripts into a website.
+    - The httpOnly attribute is a flag that can be set on a cookie. 
+    - When this flag is present, it means that the cookie is not accessible to JavaScript running in the browser. 
+    - It's a security measure to prevent certain types of cross-site scripting (XSS) attacks.
+    - XSS attacks attempt to steal information from cookies by injecting malicious scripts into a website.
 
-      + By setting the httpOnly flag, the cookie can only be accessed by the server, which helps protect-
-      + sensitive data from being stolen by malicious scripts running in the user's browser.
+    - By setting the httpOnly flag, the cookie can only be accessed by the server, which helps protect-
+    - sensitive data from being stolen by malicious scripts running in the user's browser.
 
-    2. sameSite:
+2. **sameSite :**
 
-      + The sameSite attribute is another flag that can be set on a cookie. 
-      + It controls when and how the cookie is sent by the browser to the server. 
-      + The sameSite attribute is used to prevent certain cross-site request forgery (CSRF) attacks.
+    + The sameSite attribute is another flag that can be set on a cookie. 
+    + It controls when and how the cookie is sent by the browser to the server. 
+    + The sameSite attribute is used to prevent certain cross-site request forgery (CSRF) attacks.
 
-      * **There are three possible values for the sameSite attribute**  :
+    * **There are three possible values for the sameSite attribute  :**
 
-        1. **SameSite = None :** The cookie will be sent in cross-origin requests (e.g., requests from one domain to another)
-        as long as they are made with a safe HTTP method (e.g., GET). 
-        This is often used for third-party cookies used by services embedded on different websites. (e.g, to log in another website through you google account)
+      1. **sameSite = None :** The cookie will be sent in cross-origin requests (e.g., requests from one domain to another)
+      as long as they are made with a safe HTTP method (e.g., GET). 
+      This is often used for third-party cookies used by services embedded on different websites. (e.g, to log in another website through you google account)
 
-        2. SameSite = Lax : The cookie will be sent in cross-origin requests made with a "top-level" navigation (e.g., clicking on a link) but not for requests that result from loading resources (e.g., images, scripts) from another site. This provides some protection against CSRF attacks.
+      2. **sameSite = Lax :** The cookie will be sent in cross-origin requests made with a "top-level" navigation (e.g., clicking on a link) but not for requests that result from loading resources (e.g., images, scripts) from another site. This provides some protection against CSRF attacks.
 
-        3. SameSite = Strict : The cookie will only be sent in requests that originate from the same site(same-site requests). It will not be sent in cross-origin requests, providing the highest level of CSRF protection.
+      3. **sameSite = Strict :** The cookie will only be sent in requests that originate from the same site(same-site requests). It will not be sent in cross-origin requests, providing the highest level of CSRF protection.
 
-  * **CSRF (Cross-Site Request Forgery) :**
+* **CSRF (Cross-Site Request Forgery) :**
 
-    + CSRF is a type of attack where a malicious website tricks a user's web browser into making an unintended request to another website where the user is authenticated. 
-    + If the user is logged in to the target website, the malicious request may perform actions on their behalf without their knowledge or consent.
+  + CSRF is a type of attack where a malicious website tricks a user's web browser into making an unintended request to another website where the user is authenticated. 
+  + If the user is logged in to the target website, the malicious request may perform actions on their behalf without their knowledge or consent.
 
-    * To prevent CSRF attacks, websites can use techniques like CSRF tokens and the sameSite attribute on cookies.
-    * The sameSite attribute ensures that cookies are not sent in cross-origin requests, thereby reducing the risk of unauthorized requests.
+  * To prevent CSRF attacks, websites can use techniques like CSRF tokens and the sameSite attribute on cookies.
+  * The sameSite attribute ensures that cookies are not sent in cross-origin requests, thereby reducing the risk of unauthorized requests.
 
 **NOTE :** Why are them all required? Because HTTP protocol is stateless. So, we have to introduce outselves on each request.
