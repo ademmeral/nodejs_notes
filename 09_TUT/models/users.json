@@ -1,1 +1,28 @@
-[{"username":"jennyTen","email":"jeniffer@yahoo.com","password":"654321","roles":[40312,301704,427004,2534],"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJ1c2VyIjoiamVubnlUZW4ifSwiaWF0IjoxNjkwNTUxNjc3LCJleHAiOjE2OTA2MzgwNzd9.HvgT3EnJkZgibcDgN0e3QpdYVu3ppbCjmhgJhDDFgDs"}]
+[
+  {
+    "email": "marry_ohio@gmail.com",
+    "username": "marry_in_ohio",
+    "password": "$2b$10$JHFpMB7Gs5UPdFlMGWaaFeZjPD8UfJBLrKPXc/iUZU7MscgMUveoq",
+    "roles": [301704, 2534]
+  },
+  {
+    "email": "petersmith@gmail.com",
+    "username": "psmith",
+    "password": "$2b$10$UB7boz5j4UYCM9JtwLAq2OpwYhMWNK3zbC.blWNM3ZwnMkGIQYIWK",
+    "roles": [427004, 2534]
+  },
+  {
+    "username": "jennyTen",
+    "email": "jeniffer@yahoo.com",
+    "password": "654321",
+    "roles": [2534],
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJ1c2VyIjoiamVubnlUZW4ifSwiaWF0IjoxNjkwNTcxNDYyLCJleHAiOjE2OTA2NTc4NjJ9.avqqHttwT5YYI3RjJ5LeIQO2b6t8Og9OEzhIGU4eqQI"
+  },
+  {
+    "email": "johndoe@gmail.com",
+    "username": "johndoe55",
+    "password": "$2b$10$pi03YudqSnjMp6guEZOGV.nBNtAr30VYfhBe3p9XBL7qTNVlioxt.",
+    "roles": [40312, 301704, 427004, 2534],
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJ1c2VyIjoiam9obmRvZTU1In0sImlhdCI6MTY5MDU3MTk2NCwiZXhwIjoxNjkwNjU4MzY0fQ.u32mcD_olXzlatlukOATdK9l_VjngMD5aCU5W8ESoMk"
+  }
+]

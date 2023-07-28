@@ -12,28 +12,27 @@ const DATA = {
       JSON.stringify(DATA.users)
     )
   },
-  getMany : function(req, res, next){ res.json(DATA.users) },
+  getMany : function(req, res){ return res.json(DATA.users) },
   getOne : function(req, res){ 
     if (!req.email) throw new Error('Email is required');
 
     const usr = DATA.users.find(usr => usr.email === req.email)
     return res.status(200).json(usr)
   },
-  setOne : function(req, res, next){
-    return res.sendStatus(200)
-    if (!obj?.email) {
+  setOne : function(req, res){
+    if (!req.body?.email) {
       const errMsg = 'setOne function accepts an Object literal as a parameter including email.'
       throw new Error(errMsg)
     }
-    const usr = DATA.users.find(user => user.email === obj.email)
-    DATA.setUsers([...DATA.user, {...usr, ...obj}])
-    next()
+    const usr = DATA.users.find(user => user.email === req.body.email)
+    DATA.setMany([...DATA.users, {...usr, ...req.body}])
+    return res.sendStatus(200);
   },
   deleteOne : function(req, res) {
-    return res.sendStatus(200)
-    DATA.setUsers(
-      DATA.users.filter(user => user.email !== req.params.email)
+    DATA.setMany(
+      DATA.users.filter(user => user.email !== req.body.email)
     )
+    return res.sendStatus(200)
   },
   addOne : function(obj){
     const cond = Object.keys(USER_MODEL)
@@ -41,7 +40,7 @@ const DATA = {
 
     if (!cond) throw new Error('Parameter must include all the properties.');
     
-    DATA.setUsers([...DATA.users, obj])
+    DATA.setMany([...DATA.users, obj])
   }
 }
 
